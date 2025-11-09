@@ -183,7 +183,7 @@ docker compose exec web bash
 
 ## Notas
 
-* Los archivos XML y el shapefile deben estar presentes en la raíz del proyecto.
+* Los archivos XML y el shapefile deben estar presentes en el directorio /data/ del proyecto.
 * Si un informe ya existe y fue desactivado (`is_active = False`), el sistema **lo reactivará** en lugar de crear un duplicado.
 * Librerías clave del entorno:
 
