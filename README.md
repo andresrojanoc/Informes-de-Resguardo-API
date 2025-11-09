@@ -31,7 +31,7 @@ Docker Compose version v2.35.1
 ### Clona este repositorio o copia el proyecto a tu entorno local
 
 ```bash
-git clone <URL_DEL_REPOSITORIO>
+git clone https://github.com/andresrojanoc/Informes-de-Resguardo-API.git
 cd resguardo_api
 ```
 
