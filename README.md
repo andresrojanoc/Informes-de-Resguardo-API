@@ -87,7 +87,7 @@ El servidor Django se iniciará dentro del contenedor y estará disponible en:
 
 ## Endpoints Principales
 
-### 1️ Procesamiento de datos
+### 1. Procesamiento de datos
 
 Ejecuta el procesamiento de archivos XML y Shapefile.
 
@@ -105,7 +105,7 @@ curl -X POST http://localhost:8000/data-processing/
 
 ---
 
-### 2️ Consultar informes
+### 2. Consultar informes
 
 Lista los informes de resguardo activos.
 
@@ -135,7 +135,7 @@ curl -X GET http://localhost:8000/safeguard-reports/
 
 ---
 
-### 3️ Borrado suave (soft delete)
+### 3. Borrado suave (soft delete)
 
 Desactiva un informe sin eliminarlo físicamente.
 
@@ -155,28 +155,6 @@ curl -X PATCH http://127.0.0.1:8000/safeguard-reports/1/ \
   "machine_serial": "844585",
   "is_active": false
 }
-```
-
----
-
-## Mantenimiento
-
-Para detener los contenedores:
-
-```bash
-docker compose down
-```
-
-Para reconstruir la imagen desde cero:
-
-```bash
-docker compose build --no-cache
-```
-
-Para acceder al contenedor Django:
-
-```bash
-docker compose exec web bash
 ```
 
 ---
