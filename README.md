@@ -21,7 +21,7 @@ docker compose version
 Deberías ver algo similar a:
 
 ```
-Docker Compose version v2.35.1
+Docker Compose version v2.40.3-desktop.1 
 ```
 
 ---
@@ -32,27 +32,39 @@ Docker Compose version v2.35.1
 
 ```bash
 git clone https://github.com/andresrojanoc/Informes-de-Resguardo-API.git
-cd resguardo_api
+cd Informes-de-Resguardo-API/
 ```
 
 ### Asegúrate de que los siguientes archivos estén en la raíz del proyecto
 
 ```
 resguardo_api/
-├── docker-compose.yml
 ├── Dockerfile
-├── requirements.txt
+├── README.md
+├── data
+│   ├── EngineStatusMessages-844585.xml 
+│   ├── LocationMessages-844585-page_2.xml 
+│   ├── LocationMessages-844585-page_2.xml 
+│   ├── CAMINOS_7336.dbf
+│   ├── CAMINOS_7336.prj 
+│   ├── CAMINOS_7336.shp 
+│   ├── CAMINOS_7336.shx 
+│   └── ...
+├── docker-compose.yml
 ├── manage.py
+├── requirements.txt
 ├── processing/
 │   ├── locations.py
 │   ├── models.py
 │   ├── serializers.py
 │   ├── views.py
 │   └── ...
-├── EngineStatusMessages-844585.xml
-├── LocationMessages-844585-page_1.xml
-├── LocationMessages-844585-page_2.xml
-└── CAMINOS_7336.shp
+├── resguardo_api
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   ├── wsgi.py
+│   └── ...
 ```
 
 ### Construye la imagen Docker
@@ -82,7 +94,7 @@ Ejecuta el procesamiento de archivos XML y Shapefile.
 **POST** `/data-processing/`
 
 ```bash
-curl -X POST http://127.0.0.1:8000/data-processing/
+curl -X POST http://localhost:8000/data-processing/
 ```
 
 **Respuesta esperada:**
@@ -100,7 +112,7 @@ Lista los informes de resguardo activos.
 **GET** `/safeguard-reports/`
 
 ```bash
-curl -X GET http://127.0.0.1:8000/safeguard-reports/
+curl -X GET http://localhost:8000/safeguard-reports/
 ```
 
 **Ejemplo de respuesta:**
